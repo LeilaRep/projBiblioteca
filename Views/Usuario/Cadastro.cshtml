@@ -1,0 +1,29 @@
+@model Usuario
+
+@{
+    ViewData["Title"] = "Cadastro";
+}
+
+<h2>Cadastro de Usuário</h2>
+<form id="usuarioCadastro" asp-controller="Usuario" asp-action="Cadastro" method="POST">
+    <input type="hidden" asp-for="Id" />
+    <p>
+        <label asp-for="nomeUsuario">Nome:</label>
+        <input asp-for="nomeUsuario" required/>
+    </p>
+    <p>
+        <label asp-for="login">Login:</label>
+        <input asp-for="login" required/>
+    </p>
+    <p>
+        <label asp-for="senha">Senha:</label>
+        <input asp-for="senha" required/>
+    </p>
+    <p>
+        <label asp-for="dataNascimento">Data de Nascimento:</label>
+        <input asp-for="dataNascimento" required/>
+    </p>
+    <p>
+        <input type="submit" value="Concluído" />
+    </p>
+</form>
