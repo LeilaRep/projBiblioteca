@@ -50,4 +50,28 @@
             <h3>"Nenhum registro encontrado."</h3>
         }
     </div>
+
+<nav aria-label="Páginas de empréstimos">
+        <ul class="pagination">
+            <li class="page-item">
+                <a class="page-link" href="/Emprestimo/Listagem?p=1" aria-label="Anterior">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Anterior</span>
+                </a>
+            </li>
+        
+         @for(int i = 1; i<= (int)ViewData["Paginas"]; i++)
+            {
+                <li class="page-item"><a class="page-link" href="/Livro/Listagem?p=@i">@i</a></li>
+            }
+
+            <li class="page-item">
+            <a class="page-link" href="#" aria-label="Próximo">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Próximo</span>
+            </a>
+            </li>
+        </ul>
+    </nav>
+
 </div>
