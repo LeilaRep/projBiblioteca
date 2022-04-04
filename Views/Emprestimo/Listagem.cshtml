@@ -37,15 +37,30 @@
                 <tbody>
                     @foreach(Emprestimo e in Model)
                     {
-                    <tr>
-                        <td>@e.Id</td>
-                        <td>@e.NomeUsuario</td>
-                        <td>@e.DataEmprestimo.ToString("dd/MM/yyyy")</td>
-                        <td>@e.DataDevolucao.ToString("dd/MM/yyyy")</td>
-                        <td>@e.Livro.Titulo</td>
-                        <td>@e.Livro.Autor</td>
-                        <td><a href="/Emprestimo/Edicao/@e.Id">Editar</a></td>
-                    </tr>
+                        var data1 = DateTime.Today;
+                        var data2 = Convert.ToDateTime(e.DataDevolucao);
+
+                        @if (data1 > data2){
+                            <tr class="table-danger">
+                                <td>@e.Id</td>
+                                <td>@e.NomeUsuario</td>
+                                <td>@e.DataEmprestimo.ToString("dd/MM/yyyy")</td>
+                                <td>@e.DataDevolucao.ToString("dd/MM/yyyy")</td>
+                                <td>@e.Livro.Titulo</td>
+                                <td>@e.Livro.Autor</td>
+                                <td><a href="/Emprestimo/Edicao/@e.Id">Editar</a></td>
+                            </tr>
+                        }else{
+                            <tr>
+                                <td>@e.Id</td>
+                                <td>@e.NomeUsuario</td>
+                                <td>@e.DataEmprestimo.ToString("dd/MM/yyyy")</td>
+                                <td>@e.DataDevolucao.ToString("dd/MM/yyyy")</td>
+                                <td>@e.Livro.Titulo</td>
+                                <td>@e.Livro.Autor</td>
+                                <td><a href="/Emprestimo/Edicao/@e.Id">Editar</a></td>
+                            </tr> 
+                        }
                     }
                 </tbody>
             </table>
