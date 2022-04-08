@@ -14407,6 +14407,21 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Senac\\UC07 Documentar e realizar manutenção de aplicações web\\Atividades\\Atividade 2\\Biblioteca\\Views\\Usuario\\NeedAdmin.cshtml",
+      "TargetPath": "Views\\Usuario\\NeedAdmin.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Senac\\UC07 Documentar e realizar manutenção de aplicações web\\Atividades\\Atividade 2\\Biblioteca\\Views\\Usuario\\Listar.cshtml",
+      "TargetPath": "Views\\Usuario\\Listar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Senac\\UC07 Documentar e realizar manutenção de aplicações web\\Atividades\\Atividade 2\\Biblioteca\\Views\\Usuario\\CadastroSucesso.cshtml",
+      "TargetPath": "Views\\Usuario\\CadastroSucesso.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Senac\\UC07 Documentar e realizar manutenção de aplicações web\\Atividades\\Atividade 2\\Biblioteca\\Views\\Shared\\_CookieConsentPartial.cshtml",
       "TargetPath": "Views\\Shared\\_CookieConsentPartial.cshtml",
       "FileKind": "mvc"
@@ -14424,6 +14439,11 @@
     {
       "FilePath": "c:\\Senac\\UC07 Documentar e realizar manutenção de aplicações web\\Atividades\\Atividade 2\\Biblioteca\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Senac\\UC07 Documentar e realizar manutenção de aplicações web\\Atividades\\Atividade 2\\Biblioteca\\Views\\Usuario\\Excluir.cshtml",
+      "TargetPath": "Views\\Usuario\\Excluir.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14472,8 +14492,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Senac\\UC07 Documentar e realizar manutenção de aplicações web\\Atividades\\Atividade 2\\Biblioteca\\Views\\Usuario\\Cadastro.cshtml",
+      "TargetPath": "Views\\Usuario\\Cadastro.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Senac\\UC07 Documentar e realizar manutenção de aplicações web\\Atividades\\Atividade 2\\Biblioteca\\Views\\Livro\\Listagem.cshtml",
       "TargetPath": "Views\\Livro\\Listagem.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Senac\\UC07 Documentar e realizar manutenção de aplicações web\\Atividades\\Atividade 2\\Biblioteca\\Views\\Usuario\\Editar.cshtml",
+      "TargetPath": "Views\\Usuario\\Editar.cshtml",
       "FileKind": "mvc"
     }
   ],

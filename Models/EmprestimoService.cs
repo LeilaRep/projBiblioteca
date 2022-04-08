@@ -30,7 +30,7 @@ namespace Biblioteca.Models
             }
         }
 
-        public ICollection<Emprestimo> ListarTodos(int page, int size, FiltrosEmprestimos filtro = null)
+        public ICollection<Emprestimo> ListarTodos(int page, int size, FiltrosEmprestimos filtro)
         {
             using(BibliotecaContext bc = new BibliotecaContext())
             {
@@ -39,8 +39,8 @@ namespace Biblioteca.Models
 
                 if(filtro != null)
                 {
-                    bc.Emprestimos.Include(e => e.Livro).ToList();
-                    pular = (page - 1) * size;
+                    bc.Emprestimos.OrderByDescending(e => e.DataDevolucao).Include(e => e.Livro).ToList();
+
                     //definindo dinamicamente a filtragem
                     switch(filtro.TipoFiltro)
                     {
@@ -56,8 +56,6 @@ namespace Biblioteca.Models
                             query = bc.Emprestimos;
                         break;
                     }
-
-                    return query.OrderByDescending(e => e.DataDevolucao).Skip(pular).Take(size).ToList();
                 }
                 else
                 {
@@ -65,7 +63,7 @@ namespace Biblioteca.Models
                     query = bc.Emprestimos;
                 }
 
-                return bc.Emprestimos.Include(e => e.Livro).OrderByDescending(e => e.DataDevolucao).Skip(pular).Take(size).ToList();
+                return query.OrderByDescending(e => e.DataDevolucao).Include(e => e.Livro).Skip(pular).Take(size).ToList();
             }
         }
 

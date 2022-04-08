@@ -8,6 +8,8 @@ namespace Biblioteca.Controllers
 
         public IActionResult Cadastro()
         {
+            Autenticacao.CheckLogin(this);
+            Autenticacao.verificaSeUsuarioEAdmin(this);
             return View();
         }    
         
@@ -27,35 +29,40 @@ namespace Biblioteca.Controllers
             return View(usuario);
         }
 
+        public IActionResult EditarUsuario(int id)
+        {
+            Autenticacao.CheckLogin(this);
+            Autenticacao.verificaSeUsuarioEAdmin(this);
+            Usuario u = new UsuarioService().Listar(id);
+            return View(u);
+        }
+
         [HttpPost]
 
         public IActionResult Cadastro(Usuario u)
         {
-            UsuarioService usuarioService = new UsuarioService();
 
-            if(u.Id == 0)
-            {
-                usuarioService.Inserir(u);
-            }
-            else
-            {
-                usuarioService.Atualizar(u);
-            }
+            u.senha = Criptografo.TextoCriptografado(u.senha);
+            new UsuarioService().Inserir(u);
 
-            return RedirectToAction("Listar");
+            return RedirectToAction("CadastroSucesso");
         }
 
         public IActionResult Listar()
         {
+            Autenticacao.CheckLogin(this);
+            Autenticacao.verificaSeUsuarioEAdmin(this);
             UsuarioService us = new UsuarioService();
             return View(us.Listar());
         }
 
-        public IActionResult Atualizar(int id)
+        public IActionResult EditarUsuario(Usuario u)
         {
-            UsuarioService us = new UsuarioService();
-            Usuario u = us.ObterPorId(id);
-            return View(u);
+            u.senha = Criptografo.TextoCriptografado(u.senha);
+
+            new UsuarioService().Editar(u);
+            return RedirectToAction("Listagem");
+
         }
 
         public IActionResult Deletar(int id, string decisao)
@@ -67,6 +74,24 @@ namespace Biblioteca.Controllers
             }
 
             return RedirectToAction("Listar");
+        }
+
+        public IActionResult Sair()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Index", "Home");
+        }
+
+        public IActionResult NeedAdmin()
+        {
+            Autenticacao.CheckLogin(this);
+            return View();
+        }
+
+        public IActionResult CadastroSucesso()
+        {
+            Autenticacao.CheckLogin(this);
+            return View();
         }
     }
 }

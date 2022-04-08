@@ -51,3 +51,9 @@ C:\Senac\UC07 Documentar e realizar manutenção de aplicações web\Atividades\
 C:\Senac\UC07 Documentar e realizar manutenção de aplicações web\Atividades\Atividade 2\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.dll
 C:\Senac\UC07 Documentar e realizar manutenção de aplicações web\Atividades\Atividade 2\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.pdb
 C:\Senac\UC07 Documentar e realizar manutenção de aplicações web\Atividades\Atividade 2\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.genruntimeconfig.cache
+C:\Senac\UC07 Documentar e realizar manutenção de aplicações web\Atividades\Atividade 2\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Cadastro.cshtml.g.cs
+C:\Senac\UC07 Documentar e realizar manutenção de aplicações web\Atividades\Atividade 2\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Editar.cshtml.g.cs
+C:\Senac\UC07 Documentar e realizar manutenção de aplicações web\Atividades\Atividade 2\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Excluir.cshtml.g.cs
+C:\Senac\UC07 Documentar e realizar manutenção de aplicações web\Atividades\Atividade 2\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Listar.cshtml.g.cs
+C:\Senac\UC07 Documentar e realizar manutenção de aplicações web\Atividades\Atividade 2\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\CadastroSucesso.cshtml.g.cs
+C:\Senac\UC07 Documentar e realizar manutenção de aplicações web\Atividades\Atividade 2\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\NeedAdmin.cshtml.g.cs

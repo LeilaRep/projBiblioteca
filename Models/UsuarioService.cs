@@ -7,41 +7,46 @@ namespace Biblioteca.Models
     {
         public void Inserir(Usuario u)
         {
-            using(BibliotecaContext bc = new BibliotecaContext())
+            using (BibliotecaContext bc = new BibliotecaContext())
             {
                 bc.Usuarios.Add(u);
                 bc.SaveChanges();
             }
         }
 
-        public void Atualizar(Usuario u)
+        public void Editar(Usuario u)
         {
-            using(BibliotecaContext bc = new BibliotecaContext())
+            using (BibliotecaContext bc = new BibliotecaContext())
             {
                 Usuario usuario = bc.Usuarios.Find(u.Id);
                 usuario.nomeUsuario = u.nomeUsuario;
                 usuario.login = u.login;
                 usuario.senha = u.senha;
-                usuario.dataNascimento = u.dataNascimento;
+                usuario.tipo = u.tipo;
 
                 bc.SaveChanges();
             }
         }
 
-        public ICollection<Usuario> Listar()
+        public List<Usuario> Listar()
         {
-            using(BibliotecaContext bc = new BibliotecaContext())
+            using (BibliotecaContext bc = new BibliotecaContext())
             {
-                IQueryable<Usuario> query;
-                query = bc.Usuarios;
-           
-                return query.OrderBy(u => u.Id).ToList();
+                return bc.Usuarios.ToList();
+            }
+        }
+
+        public Usuario Listar(int id)
+        {
+            using (BibliotecaContext bc = new BibliotecaContext())
+            {
+                return bc.Usuarios.Find(id);
             }
         }
 
         public void Deletar(int id)
         {
-            using(var bc = new BibliotecaContext())
+            using (var bc = new BibliotecaContext())
             {
                 Usuario usuario = bc.Usuarios.Find(id);
                 bc.Usuarios.Remove(usuario);
@@ -51,7 +56,7 @@ namespace Biblioteca.Models
 
         public Usuario GetUsuarioDetail(int id)
         {
-            using(BibliotecaContext bc = new BibliotecaContext())
+            using (BibliotecaContext bc = new BibliotecaContext())
             {
                 Usuario usuario = bc.Usuarios.Where(p => p.Id == id).SingleOrDefault();
                 return usuario;
@@ -60,7 +65,7 @@ namespace Biblioteca.Models
 
         public Usuario ObterPorId(int id)
         {
-            using(BibliotecaContext bc = new BibliotecaContext())
+            using (BibliotecaContext bc = new BibliotecaContext())
             {
                 return bc.Usuarios.Find(id);
             }
