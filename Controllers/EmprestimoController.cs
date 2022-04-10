@@ -21,17 +21,17 @@ namespace Biblioteca.Controllers
         }
 
         [HttpPost]
-        public IActionResult Cadastro(Emprestimo e)
+        public IActionResult Cadastro(CadEmprestimoViewModel viewModel)
         {
             EmprestimoService emprestimoService = new EmprestimoService();
             
-            if(e.Id == 0)
+            if(viewModel.Emprestimo.Id == 0)
             {
-                emprestimoService.Inserir(e);
+                emprestimoService.Inserir(viewModel.Emprestimo);
             }
             else
             {
-                emprestimoService.Atualizar(e);
+                emprestimoService.Atualizar(viewModel.Emprestimo);
             }
             return RedirectToAction("Listagem");
         }
