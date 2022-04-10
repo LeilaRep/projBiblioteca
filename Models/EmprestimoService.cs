@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
@@ -45,11 +46,11 @@ namespace Biblioteca.Models
                     switch(filtro.TipoFiltro)
                     {
                         case "Usuario":
-                            query = bc.Emprestimos.Where(e => e.NomeUsuario.Contains(filtro.Filtro));
+                            query = bc.Emprestimos.Where(e => e.NomeUsuario.IndexOf(filtro.Filtro, StringComparison.OrdinalIgnoreCase) >= 0);
                         break;
 
                         case "Livro":
-                            query = bc.Emprestimos.Where(e => e.Livro.Titulo.Contains(filtro.Filtro));
+                            query = bc.Emprestimos.Where(e => e.Livro.Titulo.IndexOf(filtro.Filtro, StringComparison.OrdinalIgnoreCase) >= 0);
                         break;
 
                         default:
